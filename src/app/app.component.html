@@ -1,0 +1,41 @@
+<h1 align="center">
+  User Apps
+</h1>
+<div class="container">
+    <div class="row">       
+        <div class="col-lg-4 col-lg-offset-4">
+            <input type="search" id="search" value="" class="form-control" [(ngModel)]="search" (keyup)="searchUser()" placeholder="Buscar Nombre...">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Web - Site</th>
+                        <th>Company</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let user of users">
+                        <td><a href="#" >{{user.id}}</a></td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.address.street}}</td>
+                        <td>{{user.phone}}</td>
+                        <td><a href="https://{{user.website}}">{{user.website}}</a></td>
+                        <td>{{user.company.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
